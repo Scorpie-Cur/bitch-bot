@@ -42,17 +42,16 @@ Parsing out the message content
 Since discord has a limit of 2000 characters, I highly recommend wrapping the prompt area of the model data with the following. 
 
 ```json
-    data = {
-        "model": active_model,
-        "messages": [
-            {
-            "role": "user",
-            "content": "Keep your response short for the user, here is the users message. '" + prompt + "'"
-            }
-        ],
-        "stream": False
-    }
-
+data = {
+    "model": active_model,
+    "messages": [
+        {
+        "role": "user",
+        "content": "Keep your response short for the user, here is the users message. '" + prompt + "'"
+        }
+    ],
+    "stream": False
+}
 ```
 
 The LLM follows the command very well and will provide short answers in the message to the user.
